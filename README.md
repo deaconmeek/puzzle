@@ -9,6 +9,6 @@
               \/_/                                                  
 	      
 
-now with randomised starting position
-press space to start over from a new starting postition
+now with randomised starting position.
+press space to start over from a new starting postition.
 keys 1-5 will force-move pieces (might have a bug)
