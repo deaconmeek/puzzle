@@ -66,8 +66,10 @@ public class Puzzle {
 	}
 	
 	public class AutoMove implements Runnable {
-		
+
 		 public void run() {
+		 	long startTime = System.currentTimeMillis();
+		 	int moveCount = 0;
 			 while (!finished) {
 				 //check for force shuffle
 				 if (forceShuffleIndex >= 0) {
@@ -77,16 +79,22 @@ public class Puzzle {
 				 //check for reset
 				 if (forceReset) {
 					Collections.shuffle(pieces);
-            		initialiseBoard();
-            		resetAllPieces();
-            		curPieceNumber = 0;
-            		forceReset = false;
+            				initialiseBoard();
+            				resetAllPieces();
+            				curPieceNumber = 0;
+            				forceReset = false;
+            				startTime = System.nanoTime();
 				 }
-	     		 makeMove();
-    			 myView.drawPieces(pieces);
+	     		 	makeMove();
+	     		 	moveCount++;
+    			 	myView.drawPieces(pieces);
+    			 	if (moveCount%1000000 == 0){
+    			 		System.out.println(moveCount + " moves so far.");
+    			 	}
 	 		 }
+	 		 System.out.println("Solve time " + ((System.currentTimeMillis() - startTime)/1000));
+	 		 System.out.println("Total move count " + moveCount);
 		 }
-
 	}
 	
 	
