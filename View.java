@@ -1,9 +1,12 @@
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Graphics;
+import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
+import java.util.Map;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -15,18 +18,19 @@ public class View extends JFrame {
 	JPanel mainContentPane;
 	List<Piece> pieces;
 	int squareWidth;
+	Map<String, Color> curPalette;
 	
 	public View() {
 
 		setTitle("PUZZLE!");
-        setLocationRelativeTo(null);
+		setLocation(new Point(50,50));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(600, 600);
 
-        this.squareWidth = 50;
-        int puzzleWidth = this.squareWidth * 8;
-
-		this.setMinimumSize(new Dimension(420,440));
+        this.squareWidth = 100;
+        
 		this.getContentPane().add(getMainContentPane());
+		this.pack();
         this.setVisible(true);
 	}
 	
@@ -50,6 +54,8 @@ public class View extends JFrame {
 					paintPuzzle(g);
 	            }
 			};
+			int puzzleWidth = this.squareWidth * 8;
+			mainContentPane.setPreferredSize(new Dimension(puzzleWidth,puzzleWidth));
 		}
 		return mainContentPane;
 	}
@@ -62,7 +68,8 @@ public class View extends JFrame {
 	
 	private void paintPuzzle(Graphics g) {
     	
-		g.clearRect(0, 0, 1000, 1000);
+		g.setColor(Color.DARK_GRAY);
+		g.fillRect(0, 0, 1000, 1000);
 		if (pieces != null) {
 
 			for(Piece nextPiece : pieces) {
@@ -79,7 +86,7 @@ public class View extends JFrame {
 		PieceMap map = piece.getCurMap();
 		int size = map.getSize();
 		
-		g.setColor(piece.colour);
+		g.setColor(getPieceColour(piece.pieceNumber));
 		for (int i=0; i<size; i++) {
 			for (int j=0; j<size; j++) {
 				if (map.isHit(i,j)) {
@@ -93,6 +100,31 @@ public class View extends JFrame {
 				}
 			}
 		}
+	}
+	
+	private Color getPieceColour(int pieceNumber) {
+		
+		if (pieceNumber == 1 || pieceNumber == 11) {
+			return curPalette.get(PaletteFactory.yellow);
+			
+		} else if (pieceNumber == 2) {
+			return curPalette.get(PaletteFactory.white);
+			
+		}if (pieceNumber == 3 || pieceNumber == 8) {
+			return curPalette.get(PaletteFactory.dark_blue);
+			
+		}if (pieceNumber == 4 || pieceNumber == 5) {
+			return curPalette.get(PaletteFactory.red);
+			
+		}if (pieceNumber == 6 || pieceNumber == 9) {
+			return curPalette.get(PaletteFactory.blue);
+			
+		}if (pieceNumber == 7 || pieceNumber == 10) {
+			return curPalette.get(PaletteFactory.green);
+			
+		}
+		
+		return Color.BLACK;
 	}
 	
 }

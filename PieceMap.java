@@ -20,6 +20,16 @@ public class PieceMap {
 		return pieceMap.length;
 	}
 	public boolean isHit(int x, int y) {
-		return pieceMap[x][y];
+		
+		boolean result = false;
+		try {
+			if (pieceMap[x][y]) {
+				result = true;
+			}
+
+		} catch (ArrayIndexOutOfBoundsException ex) {
+			result = false;
+		}
+		return result;
 	}
 }

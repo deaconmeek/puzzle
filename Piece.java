@@ -7,16 +7,16 @@ public class Piece {
 	int curPosition;
 	int curX;
 	int curY;
-	Color colour;
+	int pieceNumber;
 	boolean inPlay;
 	
-	public Piece(PieceMap[] positions, Color colour) {
+	public Piece(PieceMap[] positions, int pieceNumber) {
 		
 		this.positions = positions;
 		this.curPosition = 0;
 		this.curX = 0;
 		this.curY = 0;
-		this.colour = colour;
+		this.pieceNumber = pieceNumber;
 		this.inPlay = false;
 	}
 	

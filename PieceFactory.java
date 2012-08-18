@@ -1,6 +1,3 @@
-import java.awt.Color;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -349,17 +346,17 @@ public class PieceFactory {
 			);
 		
 		
-		pieces.add(new Piece(pieceMaps1, Color.yellow));
-		pieces.add(new Piece(pieceMaps2, Color.lightGray));	
-		pieces.add(new Piece(pieceMaps3, Color.blue));			
-		pieces.add(new Piece(pieceMaps4, Color.red));
-		pieces.add(new Piece(pieceMaps5, Color.red));
-		pieces.add(new Piece(pieceMaps6, Color.cyan));
-		pieces.add(new Piece(pieceMaps7, Color.green));		
-		pieces.add(new Piece(pieceMaps8, Color.blue));
-		pieces.add(new Piece(pieceMaps9, Color.cyan));
-		pieces.add(new Piece(pieceMaps10, Color.green));
-		pieces.add(new Piece(pieceMaps11, Color.yellow));
+		pieces.add(new Piece(pieceMaps1,1));
+		pieces.add(new Piece(pieceMaps2, 2));	
+		pieces.add(new Piece(pieceMaps3, 3));			
+		pieces.add(new Piece(pieceMaps4, 4));
+		pieces.add(new Piece(pieceMaps5, 5));
+		pieces.add(new Piece(pieceMaps6, 6));
+		pieces.add(new Piece(pieceMaps7, 7));		
+		pieces.add(new Piece(pieceMaps8, 8));
+		pieces.add(new Piece(pieceMaps9, 9));
+		pieces.add(new Piece(pieceMaps10, 10));
+		pieces.add(new Piece(pieceMaps11, 11));
 		
 		return pieces;
 	}
