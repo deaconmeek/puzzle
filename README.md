@@ -6,9 +6,10 @@ press keys 1-3 to select an algorithm
 press space to restart puzzle or continue to next solution
 press enter to change colours  
 
-compilation notes:  
+compilation notes (using java):  
 javac Puzzle.java  
-jar -cfe Puzzle.jar Puzzle *.java  
+jar -cfe Puzzle.jar Puzzle *.class  
+
 
 v3.0  
 added a test file with steps for a known completed solution  
@@ -17,7 +18,7 @@ added menu
 added original color scheme  
 
 v2.1  
-added colour palettes - press enter to randomly switch palettes  
+added liams colour palettes - press enter to randomly switch palettes  
 
 v2.0  
 now with randomised starting position.  
