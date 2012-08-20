@@ -14,6 +14,7 @@ v3.0
 added a test file with steps for a known completed solution  
 added 2 new algorithms  
 added menu  
+added original color scheme  
 
 v2.1  
 added colour palettes - press enter to randomly switch palettes  
