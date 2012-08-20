@@ -1,11 +1,11 @@
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -22,6 +22,7 @@ public class View extends JFrame {
 	String[] menu;
 	List<Piece> pieces;
 	int squareWidth;
+	List<Map<String, Color>> palettes;
 	Map<String, Color> curPalette;
 	
 	public View() {
@@ -33,28 +34,44 @@ public class View extends JFrame {
 
         this.squareWidth = 100;
 
-        initialiseMenu();
+        initialisePalettes();
         
 		this.getContentPane().add(getMainContentPane());
 		this.pack();
-		this.setMaximumSize(this.getSize());
 		this.setResizable(false);
         this.setVisible(true);
         
         startTimer();
 	}
 	
-	private void initialiseMenu() {
+	public void showMenu(boolean show) {
 
-		String[] menuStr = {
-				"Choose your algorithm:", 
-				"1: BASIC", 
-				"2: INTERMEDIATE", 
-				"3: ADVANCED"};
+		if (show) {
+			String[] menuStr = {
+					"Choose your algorithm:", 
+					"1: BASIC", 
+					"2: INTERMEDIATE", 
+					"3: ADVANCED"};
+			
+			menu = menuStr;
+		} else {
+			menu = null;
+		}
+	}
+
+	public void initialisePalettes() {
 		
-		menu = menuStr;
+		palettes = PaletteFactory.generatePalettes();
+		Collections.shuffle(palettes);
+		curPalette = palettes.get(0);
 	}
 	
+	public void switchPalette() {
+
+		Collections.shuffle(palettes);
+		curPalette = palettes.get(0);
+	}
+
 	private String[] getMenuTitle() {
 		String[] menuTitleStr = {
 			"                               ___           __  ",
@@ -114,23 +131,7 @@ public class View extends JFrame {
     	
 		g.setColor(Color.DARK_GRAY);
 		g.fillRect(0, 0, 1000, 1000);
-		if (pieces != null) {
-
-			for(Piece nextPiece : pieces) {
-				drawPiece(nextPiece, g);
-			}
-		}
 		
-		if (playBoard != null) {
-
-			for (int i = 0; i < 8; i++) {
-				for (int j = 0; j < 8; j++) {
-					if (!playBoard[i][j]) {
-						drawSpace(i, j, g);
-					}
-				}
-			}
-		}
 		if (menu != null) {
 
 	    	g.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 20));
@@ -149,6 +150,25 @@ public class View extends JFrame {
 			for (String curString : menu) {
 		        g.drawString( curString, xPos, yPos);
 		        yPos += 50;
+			}
+		} else {
+			
+			if (pieces != null) {
+
+				for(Piece nextPiece : pieces) {
+					drawPiece(nextPiece, g);
+				}
+			}
+			
+			if (playBoard != null) {
+
+				for (int i = 0; i < 8; i++) {
+					for (int j = 0; j < 8; j++) {
+						if (!playBoard[i][j]) {
+							drawSpace(i, j, g);
+						}
+					}
+				}
 			}
 		}
 	}
@@ -209,5 +229,6 @@ public class View extends JFrame {
 		
 		return Color.BLACK;
 	}
+	
 	
 }
