@@ -11,7 +11,7 @@ public class PieceMap {
 		for (int i=0; i<width; i++) {
 			for (int j=0; j<width; j++) {
 				boolean value = rows[i].charAt(j) == 'x';
-				pieceMap[i][j] = value;
+				pieceMap[j][i] = value;
 			}
 		}
 	}

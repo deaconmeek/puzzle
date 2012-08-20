@@ -1,5 +1,3 @@
-import java.awt.Color;
-
 
 public class Piece {
 
@@ -7,17 +5,17 @@ public class Piece {
 	int curPosition;
 	int curX;
 	int curY;
-	int pieceNumber;
-	boolean inPlay;
+	String pieceName;
+	int matchCount;
 	
-	public Piece(PieceMap[] positions, int pieceNumber) {
+	public Piece(PieceMap[] positions, String pieceName) {
 		
 		this.positions = positions;
 		this.curPosition = 0;
 		this.curX = 0;
 		this.curY = 0;
-		this.pieceNumber = pieceNumber;
-		this.inPlay = false;
+		this.pieceName = pieceName;
+		this.matchCount = 0;
 	}
 	
 	public PieceMap getCurMap() {
@@ -28,5 +26,8 @@ public class Piece {
 		return positions.length;
 	}
 	
+	public String toString() {
+		return "n"+pieceName+"p"+curPosition+"x"+curX+"y"+curY;
+	}
 	
 }

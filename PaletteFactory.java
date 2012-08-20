@@ -19,6 +19,15 @@ public class PaletteFactory {
 
 		List<Map<String, Color>> palettesList = new LinkedList<Map<String, Color>>();
 		
+		Map<String, Color> originalMap = new HashMap<String, Color>();
+		originalMap.put(white, new Color(Integer.parseInt("fcfeff",16)));
+		originalMap.put(yellow, new Color(Integer.parseInt("fdfa27",16)));
+		originalMap.put(green, new Color(Integer.parseInt("008517",16)));
+		originalMap.put(red, new Color(Integer.parseInt("f91807",16)));
+		originalMap.put(blue, new Color(Integer.parseInt("003ef9",16)));
+		originalMap.put(dark_blue, new Color(Integer.parseInt("0c2585",16)));
+		palettesList.add(originalMap);
+		
 		Map<String, Color> pastelsMap = new HashMap<String, Color>();
 		pastelsMap.put(white, new Color(Integer.parseInt("EBEBEB",16)));
 		pastelsMap.put(yellow, new Color(Integer.parseInt("FFF79A",16)));
@@ -28,7 +37,7 @@ public class PaletteFactory {
 		pastelsMap.put(dark_blue, new Color(Integer.parseInt("8493CA",16)));
 		palettesList.add(pastelsMap);
 		
-		Map<String, Color> autumnMap = new HashMap<String, Color>();
+/*		Map<String, Color> autumnMap = new HashMap<String, Color>();
 		autumnMap.put(white, new Color(Integer.parseInt("dddddd",16)));
 		autumnMap.put(yellow, new Color(Integer.parseInt("ABA000",16)));
 		autumnMap.put(green, new Color(Integer.parseInt("007236",16)));
@@ -36,7 +45,7 @@ public class PaletteFactory {
 		autumnMap.put(blue, new Color(Integer.parseInt("0076A3",16)));
 		autumnMap.put(dark_blue, new Color(Integer.parseInt("003471",16)));
 		palettesList.add(autumnMap);
-		
+*/		
 		Map<String, Color> brownTownMap = new HashMap<String, Color>();
 		brownTownMap.put(white, new Color(Integer.parseInt("EBEBEB",16)));
 		brownTownMap.put(yellow, new Color(Integer.parseInt("C7B299",16)));

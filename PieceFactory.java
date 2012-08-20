@@ -236,7 +236,7 @@ public class PieceFactory {
 
 		
 		//piece9
-		PieceMap[] pieceMaps9 = new PieceMap[4];
+		PieceMap[] pieceMaps9 = new PieceMap[8];
 		pieceMaps9[0] = new PieceMap(
 				"xxxx:" +
 				"x   :" +
@@ -250,16 +250,40 @@ public class PieceFactory {
 				" x  :"
 			);
 		pieceMaps9[2] = new PieceMap(
-				"x   :" +
+				"   x:" +
 				"xxxx:" +
 				"    :" +
 				"    :"
 			);
 		pieceMaps9[3] = new PieceMap(
+				"x   :" +
+				"x   :" +
+				"x   :" +
+				"xx  :"
+			);
+		pieceMaps9[4] = new PieceMap(
+				"xxxx:" +
+				"   x:" +
+				"    :" +
+				"    :"
+			);
+		pieceMaps9[5] = new PieceMap(
 				"xx  :" +
 				"x   :" +
 				"x   :" +
 				"x   :"
+			);
+		pieceMaps9[6] = new PieceMap(
+				"x   :" +
+				"xxxx:" +
+				"    :" +
+				"    :"
+			);
+		pieceMaps9[7] = new PieceMap(
+				" x  :" +
+				" x  :" +
+				" x  :" +
+				"xx  :"
 			);
 
 
@@ -346,17 +370,17 @@ public class PieceFactory {
 			);
 		
 		
-		pieces.add(new Piece(pieceMaps1,1));
-		pieces.add(new Piece(pieceMaps2, 2));	
-		pieces.add(new Piece(pieceMaps3, 3));			
-		pieces.add(new Piece(pieceMaps4, 4));
-		pieces.add(new Piece(pieceMaps5, 5));
-		pieces.add(new Piece(pieceMaps6, 6));
-		pieces.add(new Piece(pieceMaps7, 7));		
-		pieces.add(new Piece(pieceMaps8, 8));
-		pieces.add(new Piece(pieceMaps9, 9));
-		pieces.add(new Piece(pieceMaps10, 10));
-		pieces.add(new Piece(pieceMaps11, 11));
+		pieces.add(new Piece(pieceMaps1, "a"));
+		pieces.add(new Piece(pieceMaps2, "b"));	
+		pieces.add(new Piece(pieceMaps3, "c"));			
+		pieces.add(new Piece(pieceMaps4, "d"));
+		pieces.add(new Piece(pieceMaps5, "e"));
+		pieces.add(new Piece(pieceMaps6, "f"));
+		pieces.add(new Piece(pieceMaps7, "g"));		
+		pieces.add(new Piece(pieceMaps8, "h"));
+		pieces.add(new Piece(pieceMaps9, "i"));
+		pieces.add(new Piece(pieceMaps10, "j"));
+		pieces.add(new Piece(pieceMaps11, "k"));
 		
 		return pieces;
 	}

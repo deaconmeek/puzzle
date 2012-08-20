@@ -13,14 +13,18 @@
 
 usage:  
 run puzzle.jar  
-press space to restart puzzle  
+press keys 1-3 to select an algorithm
+press space to restart puzzle or continue to next solution
 press enter to change colours  
-press keys 1-5 to force move the first 1-5 pieces  
 
 compilation notes:  
 javac Puzzle.java  
 jar -cfe Puzzle.jar Puzzle *.java  
 
+v3.0
+added a test file with steps for a known completed solution
+added 2 new algorithms
+added menu
 
 v2.1  
 added colour palettes - press enter to randomly switch palettes  
