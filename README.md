@@ -10,10 +10,10 @@ compilation notes:
 javac Puzzle.java  
 jar -cfe Puzzle.jar Puzzle *.java  
 
-v3.0
-added a test file with steps for a known completed solution
-added 2 new algorithms
-added menu
+v3.0  
+added a test file with steps for a known completed solution  
+added 2 new algorithms  
+added menu  
 
 v2.1  
 added colour palettes - press enter to randomly switch palettes  
@@ -23,4 +23,4 @@ now with randomised starting position.
 press space to start over from a new starting postition.  
 
 v1.0  
-keys 1-5 will force-move pieces (might have a bug)  
+begin project  
