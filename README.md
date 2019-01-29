@@ -2,7 +2,7 @@ PUZZLE!
 ================
 
 ##usage:  
-run `puzzle.jar`
+download and run `puzzle.jar`
 
 - press keys 1-3 to select an algorithm
 - press space to restart puzzle or continue to next solution
